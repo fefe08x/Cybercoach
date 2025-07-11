@@ -1,4 +1,3 @@
-/* Estilos generales */
 body {
     margin: 0;
     padding: 0;
@@ -14,7 +13,6 @@ body {
     padding: 20px;
 }
 
-/* Estilos del encabezado */
 header {
     background-color: #333;
     color: white;
@@ -43,7 +41,6 @@ header {
     color: #007bff;
 }
 
-/* Estilos de botones y navegación */
 .contenedor-login-registro {
     display: flex;
     gap: 10px;
@@ -103,7 +100,6 @@ header {
     gap: 15px;
 }
 
-/* Navegación principal */
 .nav-principal {
     background-color: #444;
     padding: 10px 0;
@@ -133,7 +129,6 @@ header {
     transform: translateY(-2px);
 }
 
-/* Estilos de secciones comunes */
 
 .seccion-titulo {
     color: #333;
@@ -143,7 +138,6 @@ header {
     font-size: 24px;
 }
 
-/* Estilos de tarjetas */
 .tarjeta {
     background-color: white;
     border-radius: 8px;
@@ -164,7 +158,6 @@ header {
     font-size: 20px;
 }
 
-/* Estilos de botones CTA */
 .cta-section {
     margin-top: 30px;
     text-align: center;
@@ -193,7 +186,6 @@ header {
     padding-left: 15px;
 }
 
-/* Estilos para imágenes */
 .imagen-destacada {
     width: 100%;
     border-radius: 8px;
@@ -207,7 +199,6 @@ header {
     border-radius: 8px 8px 0 0;
 }
 
-/* Grid system */
 .grid {
     display: grid;
     gap: 20px;
@@ -226,7 +217,6 @@ header {
     grid-template-columns: repeat(4, 1fr);
 }
 
-/* Responsive styles */
 @media (max-width: 768px) {
     .contenedor-cabecera {
         flex-direction: column;
@@ -262,7 +252,6 @@ header {
     }
 }
 
-/* Animaciones */
 @keyframes fadeIn {
     from {
         opacity: 0;
