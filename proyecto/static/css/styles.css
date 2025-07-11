@@ -52,7 +52,8 @@ header {
 .boton-login,
 .boton-registro,
 .boton-cerrar-sesion,
-.cta-button {
+.cta-button,
+.enlace-autenticacion {
     padding: 8px 16px;
     border: none;
     border-radius: 4px;
@@ -61,6 +62,16 @@ header {
     transition: all 0.3s ease;
     text-decoration: none;
     display: inline-block;
+}
+
+.enlace-autenticacion {
+    color: #007bff;
+    font-weight: 500;
+}
+
+.enlace-autenticacion:hover {
+    color: #0056b3;
+    text-decoration: underline;
 }
 
 .boton-login {

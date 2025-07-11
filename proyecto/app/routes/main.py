@@ -9,4 +9,9 @@ def pagina_principal():
 @main_bp.route('/dietas')
 def dietas():
     """Página principal de dietas con información general."""
-    return render_template('dietas.html') 
+    return render_template('dietas.html')
+
+@main_bp.route('/rutinas')
+def rutinas():
+    """Página principal de rutinas con información general."""
+    return render_template('rutinas.html')

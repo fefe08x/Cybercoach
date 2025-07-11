@@ -1,4 +1,6 @@
 /* Estilos específicos para la página de inicio de sesión */
+
+/* Estilos para el botón de inicio de sesión */
 .auth-button {
     background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
     color: white;
@@ -9,7 +11,29 @@
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 1rem;
 }
+
+.auth-links a {
+    color: #007bff;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin: 0;
+    min-width: 120px;
+    text-align: center;
+}
+
+.auth-links a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
 .form-input {
     padding: 0.8rem 1rem;
     border: 2px solid #e1e1e1;

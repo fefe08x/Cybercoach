@@ -22,12 +22,11 @@
       as="script"
     />
 
-    <!-- CSS común -->
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/styles.css') }}"
-    />
-    {% block extra_css %}{% endblock %}
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    {% block extra_css %}
+    <!-- Estilos específicos para esta página -->
+    {% endblock %}
   </head>
   <body>
     <!-- Encabezado común -->
@@ -64,7 +63,7 @@
       <nav class="nav-principal">
         <ul>
           <li><a href="{{ url_for('main.pagina_principal') }}">Inicio</a></li>
-          <li><a href="{{ url_for('rutinas.rutinas') }}">Rutinas</a></li>
+          <li><a href="{{ url_for('main.rutinas') }}">Rutinas</a></li>
           <li>
             <a href="{{ url_for('ejercicios.pagina_ejercicios') }}"
               >Ejercicios</a
@@ -108,11 +107,10 @@
     </script>
     {% endif %}
 
-    <!-- JavaScript común -->
-    <script
-      src="{{ url_for('static', filename='js/index.js') }}"
-      defer
-    ></script>
-    {% block scripts %}{% endblock %}
+    <!-- Scripts JavaScript -->
+    <script src="{{ url_for('static', filename='js/index.js') }}" defer></script>
+    {% block scripts %}
+    <!-- Scripts específicos para esta página -->
+    {% endblock %}
   </body>
 </html>

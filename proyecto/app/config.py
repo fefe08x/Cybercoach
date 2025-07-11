@@ -25,22 +25,22 @@ class Config:
     SECRET_KEY = os.getenv('SECRET_KEY', 'clave-secreta-por-defecto')
     
     # Configuración de la base de datos PostgreSQL
-    # Todas las credenciales se obtienen del archivo .env
-    DB_CONFIG = {
-        'usuario': os.getenv('DB_USUARIO', 'postgres'),
-        'contrasena': os.getenv('DB_CONTRASEÑA', 'awds'),
-        'host': os.getenv('DB_HOST', 'localhost'),
-        'puerto': os.getenv('DB_PUERTO', '5432'),
-        'nombre': os.getenv('DB_NOMBRE', 'cybercoach_db')
-    }
+    # Usar la URL de Render directamente
+    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL', 'postgresql://cybercoach_db_lib6_user:DPcnVLgMbHGbKRjFYw4wpB02mBCnvC7y@dpg-d1129uemcj7s739pct7g-a.oregon-postgres.render.com/cybercoach_db_lib6')
     
-    # URI de conexión a la base de datos
-    # Se construye usando las credenciales de DB_CONFIG
-    SQLALCHEMY_DATABASE_URI = (
-        f'postgresql://{DB_CONFIG["usuario"]}:{DB_CONFIG["contrasena"]}'
-        f'@{DB_CONFIG["host"]}:{DB_CONFIG["puerto"]}/{DB_CONFIG["nombre"]}'
-    )
+    # Configuración de SQLAlchemy
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+    SQLALCHEMY_ENGINE_OPTIONS = {
+        'pool_size': 10,
+        'pool_recycle': 1800,  # 30 minutos
+        'pool_timeout': 30
+    }
     
     # Configuración de SQLAlchemy
     # Desactiva el tracking de modificaciones para mejorar el rendimiento
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    
+    # Configuración de sesión
+    PERMANENT_SESSION_LIFETIME = 1200  # 20 minutos en segundos
+    SESSION_COOKIE_SECURE = True  # Solo permitir cookies sobre HTTPS en producción
+    SESSION_COOKIE_HTTPONLY = True  # Mejora la seguridad de las cookies

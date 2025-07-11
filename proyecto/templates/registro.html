@@ -69,11 +69,156 @@
             minlength="6"
           />
         </div>
+
+        <!-- Preguntas de seguridad -->
+        <div class="form-group">
+          <label>Pregunta de seguridad 1</label>
+          <select id="pregunta1" name="pregunta1" required class="form-input">
+            <option value="">Selecciona una pregunta</option>
+            <option value="¿Cuál es el nombre de tu primera mascota?">¿Cuál es el nombre de tu primera mascota?</option>
+            <option value="¿En qué ciudad naciste?">¿En qué ciudad naciste?</option>
+            <option value="¿Cuál es el nombre de tu escuela primaria?">¿Cuál es el nombre de tu escuela primaria?</option>
+            <option value="¿Cuál es el nombre de tu mejor amigo de la infancia?">¿Cuál es el nombre de tu mejor amigo de la infancia?</option>
+            <option value="¿Cuál es tu color favorito?">¿Cuál es tu color favorito?</option>
+            <option value="¿Cuál es tu comida favorita?">¿Cuál es tu comida favorita?</option>
+            <option value="¿Cuál es el nombre de tu abuelo paterno?">¿Cuál es el nombre de tu abuelo paterno?</option>
+            <option value="¿Cuál es tu libro favorito?">¿Cuál es tu libro favorito?</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Respuesta 1</label>
+          <input
+            type="text"
+            id="respuesta1"
+            name="respuesta1"
+            required
+            class="form-input"
+            placeholder="Ingresa tu respuesta"
+          />
+        </div>
+
+        <div class="form-group">
+          <label>Pregunta de seguridad 2</label>
+          <select id="pregunta2" name="pregunta2" required class="form-input">
+            <option value="">Selecciona una pregunta</option>
+            <option value="¿Cuál es el nombre de tu primera mascota?">¿Cuál es el nombre de tu primera mascota?</option>
+            <option value="¿En qué ciudad naciste?">¿En qué ciudad naciste?</option>
+            <option value="¿Cuál es el nombre de tu escuela primaria?">¿Cuál es el nombre de tu escuela primaria?</option>
+            <option value="¿Cuál es el nombre de tu mejor amigo de la infancia?">¿Cuál es el nombre de tu mejor amigo de la infancia?</option>
+            <option value="¿Cuál es tu color favorito?">¿Cuál es tu color favorito?</option>
+            <option value="¿Cuál es tu comida favorita?">¿Cuál es tu comida favorita?</option>
+            <option value="¿Cuál es el nombre de tu abuelo paterno?">¿Cuál es el nombre de tu abuelo paterno?</option>
+            <option value="¿Cuál es tu libro favorito?">¿Cuál es tu libro favorito?</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Respuesta 2</label>
+          <input
+            type="text"
+            id="respuesta2"
+            name="respuesta2"
+            required
+            class="form-input"
+            placeholder="Ingresa tu respuesta"
+          />
+        </div>
+
+        <div class="form-group">
+          <label>Pregunta de seguridad 3</label>
+          <select id="pregunta3" name="pregunta3" required class="form-input">
+            <option value="">Selecciona una pregunta</option>
+            <option value="¿Cuál es el nombre de tu primera mascota?">¿Cuál es el nombre de tu primera mascota?</option>
+            <option value="¿En qué ciudad naciste?">¿En qué ciudad naciste?</option>
+            <option value="¿Cuál es el nombre de tu escuela primaria?">¿Cuál es el nombre de tu escuela primaria?</option>
+            <option value="¿Cuál es el nombre de tu mejor amigo de la infancia?">¿Cuál es el nombre de tu mejor amigo de la infancia?</option>
+            <option value="¿Cuál es tu color favorito?">¿Cuál es tu color favorito?</option>
+            <option value="¿Cuál es tu comida favorita?">¿Cuál es tu comida favorita?</option>
+            <option value="¿Cuál es el nombre de tu abuelo paterno?">¿Cuál es el nombre de tu abuelo paterno?</option>
+            <option value="¿Cuál es tu libro favorito?">¿Cuál es tu libro favorito?</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Respuesta 3</label>
+          <input
+            type="text"
+            id="respuesta3"
+            name="respuesta3"
+            required
+            class="form-input"
+            placeholder="Ingresa tu respuesta"
+          />
+        </div>
+
+        <script>
+        // Lista de preguntas disponibles
+        const preguntas = [
+            "¿Cuál es el nombre de tu primera mascota?",
+            "¿En qué ciudad naciste?",
+            "¿Cuál es el nombre de tu escuela primaria?",
+            "¿Cuál es el nombre de tu mejor amigo de la infancia?",
+            "¿Cuál es tu color favorito?",
+            "¿Cuál es tu comida favorita?",
+            "¿Cuál es el nombre de tu abuelo paterno?",
+            "¿Cuál es tu libro favorito?"
+        ];
+
+        // Función para actualizar los selects
+        function actualizarPreguntas() {
+            const selects = [
+                document.getElementById('pregunta1'),
+                document.getElementById('pregunta2'),
+                document.getElementById('pregunta3')
+            ];
+
+            // Obtener preguntas seleccionadas
+            const preguntasSeleccionadas = selects.map(select => select.value);
+
+            // Para cada select
+            selects.forEach(select => {
+                // Obtener índice del select actual
+                const index = selects.indexOf(select);
+                
+                // Para cada opción
+                for (let i = 0; i < select.options.length; i++) {
+                    const option = select.options[i];
+                    
+                    // Si la opción es una pregunta real
+                    if (option.value && option.value !== "") {
+                        // Deshabilitar si está seleccionada en otro campo
+                        option.disabled = preguntasSeleccionadas.some((pregunta, idx) => 
+                            pregunta === option.value && idx !== index
+                        );
+                        
+                        // Cambiar color a gris si está deshabilitada
+                        if (option.disabled) {
+                            option.style.color = '#999';
+                        } else {
+                            option.style.color = '#000';
+                        }
+                    }
+                }
+            });
+        }
+
+        // Actualizar cuando se cambia cualquier select
+        document.getElementById('pregunta1').addEventListener('change', actualizarPreguntas);
+        document.getElementById('pregunta2').addEventListener('change', actualizarPreguntas);
+        document.getElementById('pregunta3').addEventListener('change', actualizarPreguntas);
+
+        // Actualizar al cargar la página
+        actualizarPreguntas();
+        </script>
+
+
         <button type="submit" class="auth-button">Crear Cuenta</button>
         <div class="auth-links">
           <p>
             ¿Ya tienes una cuenta?
             <a href="{{ url_for('auth.iniciar_sesion') }}">Inicia sesión</a>
+          </p>
+          <p>
+            ¿Olvidaste tu contraseña?
+            <a href="{{ url_for('auth.recuperar_contraseña') }}" class="enlace-autenticacion">Recuperar contraseña</a>
           </p>
         </div>
       </form>
@@ -85,6 +230,4 @@
   rel="stylesheet"
   href="{{ url_for('static', filename='css/registro.css') }}"
 />
-{% endblock %} {% block scripts %}
-<script src="{{ url_for('static', filename='js/registro.js') }}"></script>
-{% endblock %}
+{% endblock %} 

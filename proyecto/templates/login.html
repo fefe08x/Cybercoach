@@ -4,6 +4,13 @@ endblock %} {% block content %}
   <div class="auth-container">
     <div class="auth-card">
       <h2>Iniciar Sesión</h2>
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">{{ message }}</div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
       {% if error %}
       <div class="alert alert-error">{{ error }}</div>
       {% endif %}
@@ -39,6 +46,10 @@ endblock %} {% block content %}
           <p>
             ¿No tienes una cuenta?
             <a href="{{ url_for('auth.registrar_usuario') }}">Regístrate</a>
+          </p>
+          <p>
+            ¿Olvidaste tu contraseña?
+            <a href="{{ url_for('auth.recuperar_contraseña') }}">Recupérala aquí</a>
           </p>
         </div>
       </form>
