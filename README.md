@@ -31,10 +31,10 @@ Comenzamos con una implementación local y, al final del desarrollo, tuvimos que
 Esta migración requería una reconfiguración cuidadosa para mantener la funcionalidad del sistema.
 Estas soluciones mejoran significativamente la estructura del proyecto, su mantenibilidad y su capacidad para escalar en el futuro.
 
-Conclusiones y posibles mejoras futuras 
+Conclusiones y posibles mejoras futuras: 
 Durante el desarrollo de este trabajo práctico se desarrollaron habilidades no solamente de desarrollo web, si no conocimientos de ambos lados, tanto frontend, como backend, entre los que destacamos:
 
-Conclusiones
+Conclusiones:
 Utilización fluida de la interfaz de línea de comandos (instalación de dependencias, etc).
 Conexión con base de datos.
 Manejo de peticiones GET, POST, etc. Muy importante para la autentificación.
@@ -43,7 +43,7 @@ Utilización de Git y GitHub.
 Testing (programas probadores para las funciones) y pruebas locales antes de modificar el repositorio.
 Consideramos que cuando son los alumnos quienes eligen el tema de su proyecto a desarrollar, lo llevan a cabo incluso con mejor predisposición ya que se desarrollan habilidades para  plasmar nuestras ideas en un sistema funcional.
 
-Posibles mejoras futuras
+Posibles mejoras futuras:
 Chatbot: A medida que tengamos más tokens agregaremos mejores respuestas y variedad de las mismas. 
 Sistema de pago para el uso del chatbot : Un chat gratuito para cada usuario registrado. Añadir un método de pago para los siguientes chats. Estas mejoras con el fin de que cada usuario “pague” sus propias tokens y de esta manera no se acaben. Esto evitaría quedarnos sin tokens ya que cada usuario “pagaría” los suyos.
 Recuperación de contraseña por Mail.
