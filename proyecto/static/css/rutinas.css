@@ -185,7 +185,6 @@ html {
         gap: 5px;
     }
 
-/* Estilos para la tabla de rutinas */
 .tabla-rutinas {
     width: 100%;
     border-collapse: collapse;
@@ -235,7 +234,6 @@ html {
     color: #333;
 }
 
-/* Estilos para los días de la rutina */
 .dia-rutina {
     margin: 20px 0;
     padding: 15px;
